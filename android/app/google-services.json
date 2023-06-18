@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "492060639922",
+    "project_id": "groceteria-efdf9",
+    "storage_bucket": "groceteria-efdf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492060639922:android:48e8ab7ceb8c78178e3fab",
+        "android_client_info": {
+          "package_name": "com.example.groceteria_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492060639922-1gbnd4leunv07k0qekaii3sjj2ebfs7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQEcgg26sulq7fi12RRVO-X0Wjche0mSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492060639922-1gbnd4leunv07k0qekaii3sjj2ebfs7p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "492060639922-k9u2dl63moo3get5ahb1dufhg17fdldi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.groceteriaApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
