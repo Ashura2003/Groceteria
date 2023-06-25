@@ -1,145 +1,232 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceteria_app/widgets/app_large_text.dart';
+// import 'package:flutter_catalog/utils/routes.dart';
+import '../utils/routes.dart';
+import '../widgets/vegetable_card.dart';
 
-import '../misc/AppColors.dart';
-
-class Dashboard extends StatefulWidget {
-  const Dashboard({Key? key}) : super(key: key);
-
-  @override
-  State<Dashboard> createState() => _DashboardState();
-}
-
-class _DashboardState extends State<Dashboard> with TickerProviderStateMixin{
-
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //menu text
-          Container(
-            padding: const EdgeInsets.only(top: 70,left: 20),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(children: [
+          SizedBox(
+            height: 36,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Icon(Icons.menu,size:15, color: Colors.black87,),
-                Expanded(child: Container()),
-                Container(
-                  margin: const EdgeInsets.only(right: 20),
-                  width: 50,
-                  height: 50,
-
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey.withOpacity(0.35)
+                Expanded(
+                  child: Image.asset(
+                    "assets/images/user.png",
+                    scale: 3.6,
                   ),
+                ),
+                Expanded(
+                    flex: 3,
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Good morning",
+                            style: TextStyle(
+                                color: Color(0xff979899),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            "Dear Customer",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                    )),
+                Expanded(
+                    flex: 2,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                          color: Color(0xffF3F5F7),
+                          borderRadius: BorderRadius.all(Radius.circular(24))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // Icon(
+                          //   CupertinoIcons.location,
+                          //   color: Color(0xff23AA49),
+                          //   size: 16,
+                          // ),
+                          // Text(
+                          //   "My Flat",
+                          //   style: TextStyle(
+                          //       color: Colors.black,
+                          //       fontSize: 12,
+                          //       fontWeight: FontWeight.w500),
+                          // ),
+                          // Icon(
+                          //   CupertinoIcons.chevron_down,
+                          //   color: Color(0xff23AA49),
+                          //   size: 12,
+                          // )
+                        ],
+                      ),
+                    ))
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color(0xffF3F5F7),
+                    borderRadius: BorderRadius.all(Radius.circular(24))),
+                child: TextField(
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Search Category",
+                      hintStyle: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xff979899),
+                          fontWeight: FontWeight.w500),
+                      contentPadding: EdgeInsets.all(16),
+                      prefixIcon: Icon(
+                        CupertinoIcons.search,
+                        color: Color(0xff23AA49),
+                      ),
+                    )),
+              )),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset(
+              "assets/images/banner.png",
+              scale: 4.0,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                _seeAllView(context, "Categories"),
+                SizedBox(
+                  height: 24,
+                ),
+                Row(
+                  children: [
+                    _categoriesView("assets/images/fruits.png", "Fruits"),
+                    _categoriesView(
+                        "assets/images/vegetables.png", "Vegetables"),
+                    _categoriesView("assets/images/diary.png", "Diary"),
+                    // _categoriesView("assets/images/meat.png", "Meat")
+                  ],
+                ),
+                SizedBox(
+                  height: 32,
+                ),
+                _seeAllView(context, "Best Selling"),
+                SizedBox(
+                  height: 24,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: VegetableCardWidget(
+                        imagePath: "assets/images/bell_pepper_red.png",
+                        name: "Bell Pepper Red",
+                        price: "1kg, 4\$",
+                        onTapCallback: () {
+                          Navigator.pushNamed(
+                              context, MyRoutes.vegetableDetailRoute);
+                        },
+                      ),
+                    ),
+                    Expanded(
+                      child: VegetableCardWidget(
+                          imagePath: "assets/images/lamb_meat.png",
+                          name: "Bell Pepper Red",
+                          price: "1kg, 4\$",
+                          onTapCallback: () {}),
+                    ),
+                  ],
                 )
               ],
             ),
           ),
-          SizedBox(height: 40,),
-          //dicover Text
-          Container(
-            margin: const EdgeInsets.only(left: 20),
-            child: AppLargeText(text: "Discover"),
-          ),
-          SizedBox(height: 30,),
-          //tabbar
-          Container(
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: TabBar(
-                labelPadding: const EdgeInsets.only(left: 30,right: 30),
-                controller: _tabController,
-                labelColor: Colors.black87,
-                unselectedLabelColor: Colors.grey,
-                isScrollable: true,
-                indicatorSize: TabBarIndicatorSize.label,
-                // indicator: CircleTabIndicator(color: AppColors.mainColor,radius: 4),
-                tabs: [
-                  Tab(text:"For you"),
-                  Tab(text: "Discounts"),
-                  Tab(text: "Necessary Goods")
+        ]),
+      ),
+    );
+  }
 
-                ],
+  Widget _seeAllView(BuildContext context, String name) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          name,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, MyRoutes.vegetablesRoute);
+          },
+          child: Text(
+            "See All",
+            style: TextStyle(
+                fontSize: 14,
+                color: Color(0xff23AA49),
+                fontWeight: FontWeight.w600),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _categoriesView(String imagePath, String catName) {
+    return Expanded(
+      flex: 1,
+      child: Column(
+        children: [
+          CircleAvatar(
+            backgroundColor: Color(0xffF3F5F7),
+            radius: 32,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Image.asset(
+                imagePath,
+                scale: 4.0,
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 20),
-            height: 300,
-            width: double.maxFinite,
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                ListView.builder(
-                  itemCount:3,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int index) {
-                  return
-                    Container(
-                      margin: const EdgeInsets.only(right: 15, top: 10),
-                    width: 200,
-                    height: 100,
-                    decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    image: DecorationImage(
-                    image: AssetImage(
-                    "img/tamatar.jpg"
-                    ),
-                    fit:BoxFit.cover
-                    )
-                    ),
-
-                    );
-                  },
-
-                ),
-                Text("Sup"),
-                Text("Bye"),
-              ],
-            ),
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            catName,
+            style: TextStyle(
+                fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
           )
         ],
       ),
     );
   }
 }
-
-// class CircleTabIndicator extends Decoration{
-//   final Color color;
-//   double radius;
-//   CircleTabIndicator({required this.color, required this.radius});
-//
-//   @override
-//   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-//     // TODO: implement createBoxPainter
-//     throw _CirclePainter(color: color, radius:radius);
-//     }
-//
-//
-// }
-//
-// class _CirclePainter extends BoxPainter{
-//   final Color color;
-//   double radius;
-//   _CirclePainter({required this.color, required this.radius});
-//
-//   @override
-//   void paint(Canvas canvas, Offset offset,
-//       ImageConfiguration configuration) {
-//
-//     Paint _paint=Paint();
-//     _paint.color=color;
-//     _paint.isAntiAlias=true;
-//
-//     final Offset circleOffset=Offset(configuration.size!.width/2, 0);
-//     canvas.drawCircle(offset+circleOffset, radius, _paint);
-//   }
-//
-// }
