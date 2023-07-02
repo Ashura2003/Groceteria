@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Grocery App",
       theme: ThemeData(fontFamily: GoogleFonts.lato().fontFamily),
-      initialRoute: "/",
+      initialRoute: "/DashboardScreen",
       routes: {
         "/": (context) => SplashScreen(),
         MyRoutes.welcomeRoute: (context) => WelcomeScreen(),
