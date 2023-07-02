@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceteria_app/screens/DashBoard.dart';
-import 'package:groceteria_app/screens/SearchPage.dart';
-import 'package:groceteria_app/screens/CartScreen.dart';
-import 'package:groceteria_app/screens/UserPage.dart';
+
+
+import 'CartScreen.dart';
+import 'DashBoard.dart';
+import 'SearchPage.dart';
 
 
 
@@ -18,7 +19,7 @@ class NavigationBoard extends StatefulWidget {
 
 class _NavigationBoardState extends State<NavigationBoard> {
   List pages = [
-    Dashboard(),
+    DashboardScreen(),
     SearchPage(),
     CartScreen(),
     SearchPage()
