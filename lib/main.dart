@@ -2,6 +2,8 @@ import 'package:Groceteria/screens/NotificationDemo.dart';
 import 'package:Groceteria/screens/cart.dart';
 import 'package:Groceteria/screens/vegetables.dart';
 import 'package:Groceteria/services/NotificationService.dart';
+import 'package:Groceteria/services/notis.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_catalog/screens/NotificationDemo.dart';
 // import 'package:flutter_catalog/screens/cart.dart';
@@ -18,7 +20,8 @@ import 'utils/routes.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  NotificationService.initialize();
+  await Firebase.initializeApp();
+  await notisApi().initNotifications();
   runApp(const MyApp());
 }
 

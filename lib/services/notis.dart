@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-class Noti{
+class notisApi{
   final _firebaseMessaging = FirebaseMessaging.instance;
 
   Future<void> initNotifications() async{
