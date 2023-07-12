@@ -2,6 +2,7 @@ import 'package:Groceteria/screens/cart.dart';
 import 'package:Groceteria/screens/dashboard.dart';
 import 'package:Groceteria/screens/edit_profile.dart';
 import 'package:Groceteria/screens/payment.dart';
+import 'package:Groceteria/screens/profile_screen.dart';
 import 'package:Groceteria/screens/registration.dart';
 import 'package:Groceteria/screens/vegetable_detail.dart';
 import 'package:Groceteria/screens/vegetables.dart';
@@ -40,9 +41,11 @@ class MyApp extends StatelessWidget {
             KhaltiLocalizations.delegate,
           ], // Provide the navigatorKey from KhaltiScope
           // initialRoute: MyRoutes.paymentRoute,
-          initialRoute: MyRoutes.editprofileRoute,
+          initialRoute: MyRoutes.profilescreenRoute,
           routes: {
             // Define your routes here
+            MyRoutes.profilescreenRoute: ((context) => ProfileScreen()),
+
             MyRoutes.editprofileRoute: ((context) => EditProfilePage()),
             MyRoutes.paymentRoute: ((context) => Payment()),
             MyRoutes.welcomeRoute: (context) => WelcomeScreen(),
