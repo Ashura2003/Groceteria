@@ -109,10 +109,10 @@ class _RatingScreenState extends State<RatingScreen> {
                 });
               },
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _submitRating,
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         ),
