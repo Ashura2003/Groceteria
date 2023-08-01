@@ -97,9 +97,9 @@ class _RatingScreenState extends State<RatingScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Write a review...',
                 border: OutlineInputBorder(),
               ),
