@@ -17,7 +17,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _obscureTextPassword = true;
   bool _obscureTextPasswordConfirm = true;
 
-  String _uid = "";
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void register() async {
