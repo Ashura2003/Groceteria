@@ -55,9 +55,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   //   height: 100,
                   //   width: 100,
                   // ),
-               SizedBox(height: 10,),
+               const SizedBox(height: 10,),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 7, horizontal: 9),
+                    margin: const EdgeInsets.symmetric(vertical: 7, horizontal: 9),
                     child: TextFormField(
                       decoration: InputDecoration(
                           label: Text("FullName"),
