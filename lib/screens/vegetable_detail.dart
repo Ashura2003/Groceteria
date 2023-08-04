@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/cart_data.dart';
 import '../utils/routes.dart';
 // import 'package:flutter_catalog/utils/routes.dart';
 
@@ -12,7 +13,37 @@ class VegetableDetailScreen extends StatefulWidget {
 
 class _VegetableDetailScreenState extends State<VegetableDetailScreen> {
   int itemCount = 0;
+  int totalItemCount = 0;
+  double totalPrice = 0.0;
 
+  void addToCart() {
+    if (itemCount > 0) {
+      double itemPrice = (50.0)*itemCount; // Price of each item (You can adjust this according to your requirements)
+
+
+      totalItemCount += itemCount;
+      totalPrice += itemCount * itemPrice;
+
+      CartItemModel.cartItemList.add(CartItemModel(
+        imagePath: "assets/images/pepper_red.png",
+        name: "Red Pepper",
+        price: "Rs.$itemPrice",
+        quantity: totalItemCount,
+      ));
+
+      setState(() {
+        itemCount = 0; // Reset the item count after adding to cart
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Item added to cart!"),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
+    Navigator.pushNamed(context, MyRoutes.cartRoute);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +91,7 @@ class _VegetableDetailScreenState extends State<VegetableDetailScreen> {
                   widthFactor: 0.6,
                   child: Container(
                     child: Image.asset(
-                      "assets/images/ginger.png",
+                      "assets/images/pepper_red.png",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -85,7 +116,7 @@ class _VegetableDetailScreenState extends State<VegetableDetailScreen> {
                       Expanded(
                         flex: 2,
                         child: Text(
-                          "Arabic Ginger",
+                          "Red Pepper",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 24,
@@ -183,23 +214,31 @@ class _VegetableDetailScreenState extends State<VegetableDetailScreen> {
                           "assets/images/calories.png", "80 kcal", "100 Gram")
                     ],
                   ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      _itemKeyPointsView(
+                          "assets/images/nvalue.png", "Nutritional Values",
+                          "Calories 21Kcal, ")
+                    ],
+                  ),
                   SizedBox(
                     height: 20,
                   ),
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, MyRoutes.cartRoute);
-                        },
-                        style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          textStyle: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w500),
-                          shape: StadiumBorder(),
-                          backgroundColor: Color(0xff23AA49),
-                        ),
-                        child: Text("Add to cart")),
+                      onPressed: addToCart, // Call the addToCart function when button is pressed
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        textStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                        shape: StadiumBorder(),
+                        backgroundColor: Color(0xff23AA49),
+                      ),
+                      child: Text("Add to cart"),
+                    ),
                   ),
                 ],
               ),

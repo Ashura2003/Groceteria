@@ -5,5 +5,6 @@ class MyRoutes {
   static String vegetablesRoute = "/vegetables";
   static String vegetableDetailRoute = "/vegetable_detail";
   static String cartRoute = "/cart";
-  static String notificationDemoRoute = "/Notification";
+  static String adminDashboard="/adminDashboard";
+  static String formRoute = "/form";
 }

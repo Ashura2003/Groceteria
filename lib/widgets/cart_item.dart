@@ -3,7 +3,10 @@ import '../models/cart_data.dart';
 
 class CartItemWidget extends StatefulWidget {
   final CartItemModel item;
-  const CartItemWidget({Key? key, required this.item}) : super(key: key);
+  final void Function(CartItemModel item) onRemove; // Add this line
+
+  const CartItemWidget({Key? key, required this.item, required this.onRemove}) : super(key: key);
+
 
   @override
   State<CartItemWidget> createState() => _CartItemWidgetState();
@@ -11,8 +14,21 @@ class CartItemWidget extends StatefulWidget {
 
 class _CartItemWidgetState extends State<CartItemWidget> {
   int itemCount = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    itemCount = widget.item.quantity;
+  }
+  void removeItemFromCart() {
+    setState(() {
+      // Call the onRemove function and pass the item to be removed
+      widget.onRemove(widget.item);
+    });
+  }
   @override
   Widget build(BuildContext context) {
+    // itemCount = widget.item.quantity;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Row(
@@ -65,17 +81,18 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                   ),
                 ),
                 SizedBox(
-                  width: 8,
+                  width: 4,
                 ),
                 Text(
                   "$itemCount",
                   style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
                 SizedBox(
-                  width: 8,
+                  width: 2,
                 ),
                 InkWell(
                   onTap: () {
@@ -89,9 +106,22 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                     height: 24,
                   ),
                 ),
+                SizedBox(
+                  width: 6,
+                ),
+                InkWell(
+                  onTap: () {
+                    removeItemFromCart();
+                  },
+                  child: Icon(
+                    Icons.delete,
+                    color: Colors.red,
+                  ),
+                ),
+
               ],
             ),
-          )
+          ),
         ],
       ),
     );
