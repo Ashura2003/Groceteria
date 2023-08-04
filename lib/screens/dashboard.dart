@@ -23,7 +23,7 @@ class DashboardScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Image.asset(
-                      "assets/images/user.png",
+                      "Assets/images/user.png",
                       scale: 3.6,
                     ),
                   ),
@@ -115,10 +115,10 @@ class DashboardScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      _categoriesView("assets/images/fruits.png", "Fruits"),
+                      _categoriesView("Assets/images/fruits.png", "Fruits"),
                       _categoriesView(
-                          "assets/images/vegetables.png", "Vegetables"),
-                      _categoriesView("assets/images/diary.png", "Diary"),
+                          "Assets/images/vegetables.png", "Vegetables"),
+                      _categoriesView("Assets/images/diary.png", "Diary"),
                     ],
                   ),
                   SizedBox(
@@ -134,7 +134,7 @@ class DashboardScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: VegetableCardWidget(
-                          imagePath: "assets/images/bell_pepper_red.png",
+                          imagePath: "Assets/images/bell_pepper_red.png",
                           name: "Bell Pepper Red",
                           price: "1kg, 4\$",
                           onTapCallback: () {
@@ -145,7 +145,7 @@ class DashboardScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: VegetableCardWidget(
-                            imagePath: "assets/images/lamb_meat.png",
+                            imagePath: "Assets/images/lamb_meat.png",
                             name: "Bell Pepper Red",
                             price: "1kg, 4\$",
                             onTapCallback: () {
@@ -163,7 +163,7 @@ class DashboardScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: VegetableCardWidget(
-                          imagePath: "assets/images/bell_pepper_red.png",
+                          imagePath: "Assets/images/bell_pepper_red.png",
                           name: "Bell Pepper Red",
                           price: "1kg, 4\$",
                           onTapCallback: () {
@@ -174,7 +174,7 @@ class DashboardScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: VegetableCardWidget(
-                          imagePath: "assets/images/lamb_meat.png",
+                          imagePath: "Assets/images/lamb_meat.png",
                           name: "Bell Pepper Red",
                           price: "1kg, 55\$",
                           onTapCallback: () {

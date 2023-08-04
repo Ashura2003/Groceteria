@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utils/routes.dart';
-import '../widgets/vegetable_card.dart';
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({Key? key}) : super(key: key);
@@ -12,7 +11,7 @@ class AdminDashboard extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 36,
           ),
           Padding(
@@ -21,7 +20,7 @@ class AdminDashboard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Image.asset(
-                    "assets/images/user.png",
+                    "Assets/images/user.png",
                     scale: 3.6,
                   ),
                 ),
@@ -55,16 +54,24 @@ class AdminDashboard extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 8),
+                        horizontal: 4, vertical: 8),
                     decoration: BoxDecoration(
                         color: Color(0xffF3F5F7),
                         borderRadius: BorderRadius.all(Radius.circular(24))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    child:GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, 'customerForm');
+                      },
+                      child: Text(
+                        "View Form",
+                        style: TextStyle(
+                            color: Color(0xff23AA49),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 )
@@ -101,22 +108,27 @@ class AdminDashboard extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Text(
-                  "Add Items",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context,"AdminAddItems");
+                  },
+                  child: Text(
+                    "Add Items",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
                 SizedBox(
                   height: 24,
                 ),
                 Row(
                   children: [
-                    _categoriesView("assets/images/fruits.png", "Fruits"),
+                    _categoriesView("Assets/images/fruits.png", "Fruits"),
                     _categoriesView(
-                        "assets/images/vegetables.png", "Vegetables"),
-                    _categoriesView("assets/images/diary.png", "Diary"),
+                        "Assets/images/vegetables.png", "Vegetables"),
+                    _categoriesView("Assets/images/diary.png", "Diary"),
                   ],
                 ),
                 SizedBox(

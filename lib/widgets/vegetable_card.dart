@@ -58,7 +58,7 @@ class VegetableCardWidget extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     Image.asset(
-                      "assets/images/add_icon.png",
+                      "Assets/images/add_icon.png",
                       width: 32,
                       height: 32,
                     )

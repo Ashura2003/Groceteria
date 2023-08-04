@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'firebaseService.dart';
-import 'model.dart';
+import 'models/additemmodel.dart';
 
 
 

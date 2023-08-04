@@ -4,10 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:groceteria/viewmodel.dart';
+import 'package:groceteria/viewmodel/additemviewmodel.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'model.dart';
+import 'models/additemmodel.dart';
 
 
 class AdminAddItems extends StatefulWidget {
