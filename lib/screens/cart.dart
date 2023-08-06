@@ -49,7 +49,7 @@ class CartScreen extends StatelessWidget {
                   onRemove: (CartItemModel item) {
 
                     item.quantity = 0;
-                    CartItemModel.cartItemList.remove(item);
+                    // CartItemModel.cartItemList.remove(item);
                   },
                 );
               },
