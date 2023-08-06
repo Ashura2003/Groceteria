@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Item {
@@ -52,7 +53,9 @@ class _ItemListPageState extends State<ItemListPage> {
 
     // Perform the update operation here
     // For simplicity, we'll just print the updated values
-    print('Updated Item Name: $newName');
+    if (kDebugMode) {
+      print('Updated Item Name: $newName');
+    }
     print('Updated Item Price: $newPrice');
 
     _selectedItem.name = newName;
