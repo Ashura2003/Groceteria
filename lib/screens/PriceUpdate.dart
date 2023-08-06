@@ -113,7 +113,7 @@ class _ItemListPageState extends State<ItemListPage> {
                     decoration: const InputDecoration(labelText: 'Price'),
                     keyboardType: TextInputType.number,
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
