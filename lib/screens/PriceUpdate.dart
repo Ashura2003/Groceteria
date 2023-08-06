@@ -16,7 +16,6 @@ class _ItemListPageState extends State<ItemListPage> {
   List<Item> itemList = [
     Item(name: 'Item 1', price: 10.0),
     Item(name: 'Item 2', price: 20.0),
-    Item(name: 'Item 3', price: 30.0),
   ];
 
   late TextEditingController _nameController;
