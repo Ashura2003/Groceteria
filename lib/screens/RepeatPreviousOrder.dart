@@ -14,7 +14,7 @@ class PurchaseHistory extends StatelessWidget {
     print(purchaseHistoryItems);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Purchase History"),
+        title: const Text("Purchase History"),
       ),
       body: ListView.builder(
         itemCount: purchaseHistoryItems.length,
@@ -22,7 +22,7 @@ class PurchaseHistory extends StatelessWidget {
           return ListTile(
             title: Text(purchaseHistoryItems[index].productName),
             subtitle: Text(
-                "\$" + purchaseHistoryItems[index].price.toString()),
+                "\$${purchaseHistoryItems[index].price}"),
             leading: Icon(Icons.shopping_cart),
             trailing: Text(purchaseHistoryItems[index].date),
           );
