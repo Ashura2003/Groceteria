@@ -8,6 +8,8 @@ class Item {
 }
 
 class ItemListPage extends StatefulWidget {
+  const ItemListPage({super.key});
+
   @override
   State<ItemListPage> createState() => _ItemListPageState();
 }
