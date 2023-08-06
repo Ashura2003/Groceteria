@@ -76,7 +76,7 @@ class _ItemListPageState extends State<ItemListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Item List'),
+        title: const Text('Item List'),
       ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
