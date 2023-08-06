@@ -8,13 +8,13 @@ import '../models/additemmodel.dart';
 
 
 class ItemViewModel with ChangeNotifier{
-  ItemRepository _ItemRepository =ItemRepository();
+  final ItemRepository _ItemRepository =ItemRepository();
   Stream<QuerySnapshot<ItemModel>>? _Item;
   Stream<QuerySnapshot<ItemModel>>? get Item => _Item;
 
   Future<void> getItem() async{
     var response = _ItemRepository.getData();
-    _Item = response as Stream<QuerySnapshot<ItemModel>>?;
+    _Item = response;
     notifyListeners();
   }
 }
