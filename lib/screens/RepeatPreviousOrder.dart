@@ -23,7 +23,7 @@ class PurchaseHistory extends StatelessWidget {
             title: Text(purchaseHistoryItems[index].productName),
             subtitle: Text(
                 "\$${purchaseHistoryItems[index].price}"),
-            leading: Icon(Icons.shopping_cart),
+            leading: const Icon(Icons.shopping_cart),
             trailing: Text(purchaseHistoryItems[index].date),
           );
         },
@@ -54,7 +54,7 @@ void main() {
       purchaseHistoryItems: [
         PurchaseHistoryItem.fromJson({
           'productName': 'Product 1',
-          'price': 100,
+          'price': 90,
           'date': '2023-07-01',
         }),
         PurchaseHistoryItem.fromJson({
@@ -64,7 +64,7 @@ void main() {
         }),
         PurchaseHistoryItem.fromJson({
           'productName': 'Product 3',
-          'price': 20,
+          'price': 40,
           'date': '2023-06-29',
         }),
       ],
