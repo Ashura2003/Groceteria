@@ -110,7 +110,7 @@ class _ItemListPageState extends State<ItemListPage> {
                   const SizedBox(height: 16.0),
                   TextField(
                     controller: _priceController,
-                    decoration: InputDecoration(labelText: 'Price'),
+                    decoration: const InputDecoration(labelText: 'Price'),
                     keyboardType: TextInputType.number,
                   ),
                   SizedBox(height: 16.0),
