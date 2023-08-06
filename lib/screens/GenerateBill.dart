@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 
 class GroceryStore extends StatefulWidget {
+  const GroceryStore({super.key});
+
   @override
-  _GroceryStoreState createState() => _GroceryStoreState();
+  State<GroceryStore> createState() => _GroceryStoreState();
 }
 
 class _GroceryStoreState extends State<GroceryStore> {
