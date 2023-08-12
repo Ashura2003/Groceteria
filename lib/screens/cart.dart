@@ -16,7 +16,7 @@ class CartScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Cart",
           style: TextStyle(
             fontSize: 20,
@@ -67,7 +67,7 @@ class CartScreen extends StatelessWidget {
                     },
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
