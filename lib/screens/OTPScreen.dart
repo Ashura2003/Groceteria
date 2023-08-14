@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-//Startof project
+//Start of project
 class OTPScreen extends StatefulWidget {
   const OTPScreen({Key? key}) : super(key: key);
 
