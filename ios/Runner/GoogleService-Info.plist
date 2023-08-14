@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>492060639922-k9u2dl63moo3get5ahb1dufhg17fdldi.apps.googleusercontent.com</string>
+	<string>747101072573-lkrnfsde7n6vpcfi0oifchvq8lq22p26.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.492060639922-k9u2dl63moo3get5ahb1dufhg17fdldi</string>
+	<string>com.googleusercontent.apps.747101072573-lkrnfsde7n6vpcfi0oifchvq8lq22p26</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCQDaMhqMVfPIDIRqgKlPyIDzJeUc1CwvU</string>
+	<string>AIzaSyC4PLmU1ppimgDCT71WSJrDs_k1dvqQyic</string>
 	<key>GCM_SENDER_ID</key>
-	<string>492060639922</string>
+	<string>747101072573</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.groceteriaApp</string>
 	<key>PROJECT_ID</key>
-	<string>groceteria-efdf9</string>
+	<string>groo-96a33</string>
 	<key>STORAGE_BUCKET</key>
-	<string>groceteria-efdf9.appspot.com</string>
+	<string>groo-96a33.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:492060639922:ios:74d677e3394944758e3fab</string>
+	<string>1:747101072573:ios:4ee0d48d5e9a51227bdbd4</string>
 </dict>
 </plist>

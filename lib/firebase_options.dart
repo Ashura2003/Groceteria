@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBQEcgg26sulq7fi12RRVO-X0Wjche0mSQ',
-    appId: '1:492060639922:android:48e8ab7ceb8c78178e3fab',
+    appId: '1:492060639922:android:12fe605c86e32a0e8e3fab',
     messagingSenderId: '492060639922',
     projectId: 'groceteria-efdf9',
     storageBucket: 'groceteria-efdf9.appspot.com',
